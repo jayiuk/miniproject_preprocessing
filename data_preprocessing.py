@@ -17,8 +17,8 @@ class data_preprocessing():
         return df
     def tokenize(self):
         df = self.word_prep()
-        from konlpy.tag import Kkma
-        kkma = Kkma()
+        from konlpy.tag import Okt
+        kkma = Okt()
         tokens = []
         df['review'] = df['review'].astype(str)
         for reviews in df['review']:
@@ -27,4 +27,6 @@ class data_preprocessing():
             tokens.append(token)
 
         new_df = pd.DataFrame({'review' : tokens})
-        return new_df
+        point = self.input['point']
+        final_df = pd.concat([new_df, point], axis = 1)
+        return final_df

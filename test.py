@@ -1,6 +1,6 @@
 import pandas as pd
 import re
-from konlpy.tag import Kkma
+from konlpy.tag import Okt
 from data_preprocessing import data_preprocessing
 
 # 사용 예시
