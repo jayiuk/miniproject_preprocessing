@@ -27,4 +27,6 @@ class data_preprocessing():
             tokens.append(token)
 
         new_df = pd.DataFrame({'review' : tokens})
-        return new_df
+        point = self.input['point']
+        final_df = pd.concat([new_df, point], axis = 1)
+        return final_df
